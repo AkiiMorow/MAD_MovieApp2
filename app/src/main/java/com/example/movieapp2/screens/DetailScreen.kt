@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.movieapp2.models.Movie
@@ -22,7 +23,7 @@ import com.example.movieapp2.widgets.MovieRow
 
 @Preview(showBackground = true)
 @Composable
-fun DetailScreen(movieId: String? = getMovies()[0].id, navController: NavController = rememberNavController(), viewModel: FavouritesViewModel = viewModel()){
+fun DetailScreen(movieId: String? = getMovies()[0].id, navController: NavController = rememberNavController(), viewModel: FavouritesViewModel = androidx.lifecycle.viewmodel.compose.viewModel()){
 
     val movie = filterMove(movieId = movieId)
 

@@ -18,7 +18,7 @@ import com.example.movieapp2.viewmodels.FavouritesViewModel
 
 @Preview(showBackground = true)
 @Composable
-fun HomeScreen(navController: NavController = rememberNavController(), viewModel: FavouritesViewModel = viewModel()){
+fun HomeScreen(navController: NavController = rememberNavController(), viewModel: FavouritesViewModel = androidx.lifecycle.viewmodel.compose.viewModel()){
     Scaffold(
         topBar = {
             TopAppBar(
@@ -34,7 +34,7 @@ fun HomeScreen(navController: NavController = rememberNavController(), viewModel
 
 @Composable
 fun MainContent(navController: NavController,
-                viewModel: FavouritesViewModel = viewModel(),
+                viewModel: FavouritesViewModel = androidx.lifecycle.viewmodel.compose.viewModel(),
                 movieList: List<Movie> = getMovies()){
     LazyColumn {
         items(movieList) { movie ->
